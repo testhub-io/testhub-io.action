@@ -2,10 +2,12 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+
+  test-result-pattern:
+    description: 'Test results file pattern. A glob pattern. Could be path with wildcards like /target/**/TestResults*.xml'
     required: true
     default: 'World'
+
 outputs:
   time: # id of output
     description: 'The time we greeted you'
