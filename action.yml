@@ -1,12 +1,17 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Test results uploader to Test-hub.io'
+description: 'Upload test results to Test-hub.io'
 inputs:
 
   test-result-pattern:
     description: 'Test results file pattern. A glob pattern. Could be path with wildcards like /target/**/TestResults*.xml'
     required: true
-    default: 'World'
+    default: '**/TestResults*.xml'
+  
+  test-coverage-pattern:
+    description: 'Test coverage file pattern. A glob pattern. Could be path with wildcards like /target/**/jacoco.xml'
+    required: false
+    default: '/target/**/jacoco.xml'
 
 outputs:
   time: # id of output
