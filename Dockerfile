@@ -5,7 +5,9 @@ RUN apt-get update
 RUN apt-get install curl tar -y
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh 
+RUN chmod +x /entrypoint.sh
+
 RUN curl https://github.com/testhub-io/testhub-cli/releases/download/v0.4/testhub-cli_v0.4_linux_arm64.tar.gz --output testhub-cli.tar.gz -L \
     && tar -xzf testhub-cli.tar.gz \
     && chmod +x /testhub-cli
