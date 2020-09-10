@@ -3,12 +3,12 @@ name: 'Test results uploader to Test-hub.io'
 description: 'Upload test results to Test-hub.io'
 inputs:
 
-  test-result-pattern:
+  test_result_pattern:
     description: 'Test results file pattern. A glob pattern. Could be path with wildcards like /target/**/TestResults*.xml'
     required: true
     default: '**/TestResults*.xml'
   
-  test-coverage-pattern:
+  test_coverage_pattern:
     description: 'Test coverage file pattern. A glob pattern. Could be path with wildcards like /target/**/jacoco.xml'
     required: false
     default: '/target/**/jacoco.xml'

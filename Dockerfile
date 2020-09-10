@@ -10,7 +10,7 @@ RUN chmod +x /entrypoint.sh
 
 RUN curl https://github.com/testhub-io/testhub-cli/releases/download/v0.5/testhub-cli_v0.5_linux_386.tar.gz --output testhub-cli.tar.gz -L \
     && tar -xzf testhub-cli.tar.gz \    
-    && cp testhub-cli usr/bin/testhub-cli \
+    && cp ./testhub-cli usr/bin/testhub-cli \
     && chmod +x usr/bin/testhub-cli
 
 
