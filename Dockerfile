@@ -8,10 +8,10 @@ RUN apt-get install curl tar -y
 COPY entrypoint.sh /entrypoint.sh 
 RUN chmod +x /entrypoint.sh
 
-RUN curl https://github.com/testhub-io/testhub-cli/releases/download/v0.6/testhub-cli_v0.6_linux_arm64.tar.gz --output testhub-cli.tar.gz -L \
-    && tar -xzf testhub-cli.tar.gz \
-    && chmod +x /testhub-cli
-
+RUN curl https://github.com/testhub-io/testhub-cli/releases/download/v0.7/testhub-cli_v0.7_linux_arm64.tar.gz --output testhub-cli.tar.gz -L \
+    && tar -xzf testhub-cli.tar.gz \    
+    && cp ./testhub-cli usr/bin/testhub-cli \
+    && chmod +x usr/bin/testhub-cli
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]

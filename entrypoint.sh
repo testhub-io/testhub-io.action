@@ -1,12 +1,10 @@
 #!/bin/sh -l
 
-echo "Pattern from action $1"
- 
+echo "Pattern for test results: $INPUT_TEST_RESULT_PATTERN" 
+testhub-cli upload -p $GITHUB_REPOSITORY -f $INPUT_TEST_RESULT_PATTERN -b $GITHUB_RUN_NUMBER -r $GITHUB_WORKSPACE
 
-/testhub-cli upload -p $GITHUB_REPOSITORY -f $1 -b $GITHUB_RUN_NUMBER -r $GITHUB_WORKSPACE --branch $GITHUB_REF
-
-echo "Pattern from action 2:  $2"
-/testhub-cli uploadCoverage -p $GITHUB_REPOSITORY -f $2 -b $GITHUB_RUN_NUMBER -r $GITHUB_WORKSPACE
+echo "Pattern for coverage: $INPUT_TEST_COVERAGE_PATTERN"
+testhub-cli uploadCoverage -p $GITHUB_REPOSITORY -f $INPUT_TEST_COVERAGE_PATTERN -b $GITHUB_RUN_NUMBER -r $GITHUB_WORKSPACE
 
 time=$(date)
 echo "::set-output name=time::$time"
