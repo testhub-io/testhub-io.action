@@ -8,7 +8,7 @@ RUN apt-get install curl tar -y
 COPY entrypoint.sh /entrypoint.sh 
 RUN chmod +x /entrypoint.sh
 
-RUN curl https://github.com/testhub-io/testhub-cli/releases/download/v0.7/testhub-cli_v0.7_linux_386.tar.gz --output /testhub-cli.tar.gz -L \
+RUN curl https://github.com/testhub-io/testhub-cli/releases/download/v0.8/testhub-cli_v0.7_linux_386.tar.gz --output /testhub-cli.tar.gz -L \
     && tar -xzf /testhub-cli.tar.gz \       
     && chmod +x /testhub-cli
 
