@@ -3,7 +3,7 @@ name: 'Test results uploader to Test-hub.io'
 description: 'Upload test results to Test-hub.io'
 
 branding:
-  icon: 'archive'  
+  icon: 'upload-cloud'  
   color: 'blue'
 
 inputs:
