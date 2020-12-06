@@ -1,21 +1,19 @@
-# Hello world docker action
+## Upload your JUnit Test results and Cobertura coverage reports to TestHub
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+## Usage
 
-## Inputs
+In your `.github.workflows` folder include a `workflow.yml` file include a step to push to Testhub.
 
-### `who-to-greet`
+For example
 
-**Required** The name of the person to greet. Default `"World"`.
+```yaml
+- name: Upload test results
+      id: hello
+      uses: testhub-io/testhub-io.action@v0.57
+      with:        
+        test_result_pattern: "/target/surefire-reports/**/*.xml"
+        test_coverage_pattern: "/target/site/jacoco/jacoco.xml"
+```        
 
-## Outputs
-
-### `time`
-
-The time we greeted you.
-
-## Example usage
-
-uses: actions/hello-world-docker-action@v1
-with:
-  who-to-greet: 'Mona the Octocat'
+## License
+The code in this project is released under the MIT License.
