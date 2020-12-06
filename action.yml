@@ -1,8 +1,12 @@
 # action.yml
 name: 'Test results uploader to Test-hub.io'
 description: 'Upload test results to Test-hub.io'
-inputs:
 
+branding:
+  icon: 'archive'  
+  color: 'blue'
+
+inputs:
   test_result_pattern:
     description: 'Test results file pattern. A glob pattern. Could be path with wildcards like /target/**/TestResults*.xml'
     required: true
