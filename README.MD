@@ -1,4 +1,4 @@
-## Upload your JUnit Test results and Cobertura coverage reports to TestHub
+## Upload your Test results and coverage reports to TestHub
 
 ## Usage
 
