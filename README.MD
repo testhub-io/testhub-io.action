@@ -1,4 +1,4 @@
-## Upload your Test results and coverage reports to TestHub
+## Upload Test results and coverage reports to TestHub
 
 ## Usage
 
