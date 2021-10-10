@@ -20,13 +20,9 @@ inputs:
   base_directory:
     description: 'Base directory. Default is current workspace'
     required: false
-    default: '$GITHUB_WORKSPACE' 
+    default:  ${{ github.workspace }}
 
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.test-result-pattern }}
+
