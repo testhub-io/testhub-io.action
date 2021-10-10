@@ -16,6 +16,11 @@ inputs:
     description: 'Test coverage file pattern. A glob pattern. Could be path with wildcards like /target/**/jacoco.xml'
     required: false
     default: '/target/**/jacoco.xml'
+  
+  base_directory:
+    description: 'Base directory. Default is current workspace'
+    required: false
+    default: '$GITHUB_WORKSPACE' 
 
 outputs:
   time: # id of output
