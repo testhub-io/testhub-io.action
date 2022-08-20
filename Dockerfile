@@ -1,8 +1,8 @@
 # Container image that runs your code
-FROM debian:buster-slim
+FROM alpine:3.16.2 
 
-RUN apt-get update 
-RUN apt-get install curl tar -y
+#RUN apt-get update 
+RUN apk add --no-cache curl tar
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh 

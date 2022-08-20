@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Starting test results upload..."
 echo "Pattern for test results: $INPUT_TEST_RESULT_PATTERN" 
