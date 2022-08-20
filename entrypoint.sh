@@ -2,7 +2,10 @@
 
 echo "Starting test results upload..."
 echo "Pattern for test results: $INPUT_TEST_RESULT_PATTERN" 
-/testhub upload -p "$GITHUB_REPOSITORY" -f "$INPUT_TEST_RESULT_PATTERN" -b "$GITHUB_RUN_NUMBER" -r "$INPUT_BASE_DIRECTORY" --branch "$GITHUB_REF"
+
+BRANCH_NAME=echo ${GITHUB_REF##*/}
+echo "Branch name: $BRANCH_NAME"
+/testhub upload -p "$GITHUB_REPOSITORY" -f "$INPUT_TEST_RESULT_PATTERN" -b "$GITHUB_RUN_NUMBER" -r "$INPUT_BASE_DIRECTORY" --branch "$BRANCH_NAME"
 
 echo "Pattern for coverage: $INPUT_TEST_COVERAGE_PATTERN"
 /testhub uploadCoverage -p "$GITHUB_REPOSITORY" -f "$INPUT_TEST_COVERAGE_PATTERN" -b "$GITHUB_RUN_NUMBER" -r "$INPUT_BASE_DIRECTORY"
