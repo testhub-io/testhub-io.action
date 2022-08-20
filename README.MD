@@ -8,8 +8,8 @@ For example
 
 ```yaml
 - name: Upload test results
-      id: hello
-      uses: testhub-io/testhub-io.action@v0.57
+      if: always()   # make sure we run it every time even if test step fails
+      uses: testhub-io/testhub-io.action@v0.62
       with:        
         test_result_pattern: "/target/surefire-reports/**/*.xml"
         test_coverage_pattern: "/target/site/jacoco/jacoco.xml"
